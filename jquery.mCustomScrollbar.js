@@ -1495,7 +1495,7 @@ and dependencies (minified).
 				if((dir==="y" && !d.overflowed[0]) || (dir==="x" && !d.overflowed[1])){return;}
 				if(o.mouseWheel.invert || e.webkitDirectionInvertedFromDevice){dlt=-dlt;}
 				if(o.mouseWheel.normalizeDelta){dlt=dlt<0 ? -1 : 1;}
-				if((dlt>0 && draggerPos!==0) || (dlt<0 && draggerPos!==limit) || o.mouseWheel.preventDefault){
+				if((dlt>0 && draggerPos!==0) || (dlt<0 && draggerPos!==limit && Math.abs(draggerPos - limit) >= 1) || o.mouseWheel.preventDefault){
 					e.stopImmediatePropagation();
 					e.preventDefault();
 				}
